@@ -334,13 +334,103 @@ cand_cols <- c('pct_dem','pct_rep','pct_other')
 race_cols <- c('pct_white','pct_black','pct_non_bw')
 totals_col <- "totvote"
 
-ei_results <- ei_iter(votes20, cand_cols, race_cols, totals_col,
-                      plots = TRUE, plot_path = "ei_plot.png"
+#### King’s iterative EI ####
+
+ei_results12 <- ei_iter(votes12, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_12"
 )
-ei_rxc_results <- ei_rxc(data=votes20,
-                         cand_cols, race_cols, totals_col,
-                         diagnostic = TRUE,
-                         par_compute = TRUE,
-                         verbose = TRUE,
-                         plot_path = "ei_plot.png"
+
+ei_results14 <- ei_iter(votes14, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_14"
+)
+
+ei_results15_first <- ei_iter(votes15first, cand_cols, race_cols, totals_col,
+                              plots = TRUE, plot_path = "ei_15_first"
+)
+
+ei_results15_second <- ei_iter(votes15second, cand_cols, race_cols, totals_col,
+                               plots = TRUE, plot_path = "ei_15second"
+)
+
+ei_results16 <- ei_iter(votes16, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_16"
+)
+
+ei_results18 <- ei_iter(votes18, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_18"
+)
+
+ei_results19 <- ei_iter(votes19, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_19"
+)
+
+ei_results20 <- ei_iter(votes20, cand_cols, race_cols, totals_col,
+                        plots = TRUE, plot_path = "ei_20"
+)
+#### rows by columns ####
+
+ei_rxc_results20 <- ei_rxc(data=votes20,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_20_rxc"
+)
+
+ei_rxc_results18 <- ei_rxc(data=votes18,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_18_rxc"
+)
+
+ei_rxc_results19 <- ei_rxc(data=votes19,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_19_rxc"
+)
+
+ei_rxc_results16 <- ei_rxc(data=votes16,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_16_rxc"
+)
+
+
+ei_rxc_results15first <- ei_rxc(data=votes15first,
+                                cand_cols, race_cols, totals_col,
+                                diagnostic = TRUE,
+                                par_compute = TRUE,
+                                verbose = TRUE,
+                                plot_path = "ei_15first_rxc"
+)
+
+
+ei_rxc_results15second <- ei_rxc(data=votes15second,
+                                 cand_cols, race_cols, totals_col,
+                                 diagnostic = TRUE,
+                                 par_compute = TRUE,
+                                 verbose = TRUE,
+                                 plot_path = "ei_15second_rxc"
+)
+
+ei_rxc_results14 <- ei_rxc(data=votes14,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_14_rxc"
+)
+
+ei_rxc_results12 <- ei_rxc(data=votes12,
+                           cand_cols, race_cols, totals_col,
+                           diagnostic = TRUE,
+                           par_compute = TRUE,
+                           verbose = TRUE,
+                           plot_path = "ei_12_rxc"
 )
