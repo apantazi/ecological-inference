@@ -330,3 +330,17 @@ ei_results_iter_20 <- ei_iter(
 )
 summary(ei_results_iter_20)
 
+cand_cols <- c('pct_dem','pct_rep','pct_other')
+race_cols <- c('pct_white','pct_black','pct_non_bw')
+totals_col <- "totvote"
+
+ei_results <- ei_iter(votes20, cand_cols, race_cols, totals_col,
+                      plots = TRUE, plot_path = "ei_plot.png"
+)
+ei_rxc_results <- ei_rxc(data=votes20,
+                         cand_cols, race_cols, totals_col,
+                         diagnostic = TRUE,
+                         par_compute = TRUE,
+                         verbose = TRUE,
+                         plot_path = "ei_plot.png"
+)
